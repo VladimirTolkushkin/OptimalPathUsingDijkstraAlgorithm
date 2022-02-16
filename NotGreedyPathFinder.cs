@@ -70,11 +70,6 @@ namespace Greedy
 					}
 				}
 			}
-
-
-
-			//FindOptimalPathRecursive(state, state.Position, state.Energy, 0, state.Chests.ToList(),
-			//	new List<Point>(), dictionary, new HashSet<Point>());
 			return bestPath;
 		}
 
@@ -86,33 +81,5 @@ namespace Greedy
 				dictionary[t] = dijkstra.GetPathsByDijkstra(state, t, state.Chests).ToList();
 			return dictionary;
 		}
-
-		//public void FindOptimalPathRecursive(State state, Point start, int energy, int goal, List<Point> targets,
-		//	List<Point> path, Dictionary<Point, List<PathWithCost>> dictionary, HashSet<Point> visited)
-		//{
-		//	if (goal > bestGoal)
-		//	{
-		//		bestGoal = goal;
-		//		bestPath = path;
-		//	}
-		//	if (goal == state.Chests.Count) return;
-
-		//	foreach (var way in dictionary[start].Where(p => !visited.Contains(p.End)))
-		//	{
-		//		var e = energy- way.Cost;
-		//		if (e >= 0)
-		//		{
-		//			targets.Remove(way.End);
-
-		//			var p = path.ToList();
-		//			p.AddRange(way.Path.Skip(1));
-
-		//			var v = visited.ToHashSet<Point>();
-		//			v.Add(way.End);
-
-		//			FindOptimalPathRecursive(state, way.End, e, goal + 1, targets, p, dictionary, v);
-		//		}
-		//	}
-		//}
 	}
 }
